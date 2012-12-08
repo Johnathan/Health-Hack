@@ -1,8 +1,8 @@
-.avatar-icon img, .avatar-icon{
+.patient-img .avatar-icon img, .patient-img .avatar-icon{
     border-radius: 50px;
 }
 
-.avatar-icon{
+.patient-img .avatar-icon{
     display: block;
     border-radius: 50px;
     width: 100px;
