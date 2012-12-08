@@ -1,7 +1,7 @@
 @layout('layouts.master')
 
 @section('content')
-    <h2>Thread Overview</h2>
+    <h2>Thread title</h2>
 
 
 @endsection

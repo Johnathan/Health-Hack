@@ -12,13 +12,13 @@ Route::get('patients', function()
 });
 
 
-Route::get('patients/:patient_id', function($patient_id)
+Route::get('patients/(:any)', function($patient_id)
 {
     return View::make('patients.show');
 });
 
 
-Route::get('patients/:patient_id/threads/:thread_id', function($patient_id, $thread_id)
+Route::get('patients/(:any)/threads/(:any)', function($patient_id, $thread_id)
 {
     return View::make('patients.threads.show');
 });
