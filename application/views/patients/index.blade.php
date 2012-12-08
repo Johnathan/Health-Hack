@@ -1,7 +1,12 @@
 @layout('layouts.master')
 
 @section('content')
-    <h2>My patients <small><a href="{{ URL::to('/patients/new') }}">Add Patient</a></small></h2>
+    <!-- <h2>My patients <small><a href="{{ URL::to('/patients/new') }}">Add Patient</a></small></h2> -->
+    
+    <header class="instructions">
+    	<h1>Patients</h1>
+    	<h2>Instructions go here</h2>
+    </header>
 
 	@if( isset($patients) && count($patients) > 0 )
 		<ul class="patient-cards">
@@ -18,7 +23,7 @@
 					
 					<hr class="card-rule" />
 					
-					<h4 class="card-footer">Open Issue</h4>
+					<h4 class="card-footer"><span>Open Issue</h4>
 				</div>
 				
 				

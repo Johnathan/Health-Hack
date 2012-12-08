@@ -15,9 +15,12 @@ class Threads_Controller extends Base_Controller
 
 	public function get_create( $patient_id = NULL )
 	{
+        $patient = Auth::user()->patients()->where_id( $patient_id )->first();
+
 		if( Auth::user()->patients()->where_id( $patient_id )->first() )
 		{
-			return View::make('patients.threads.create');
+			return View::make('patients.threads.create')
+                ->with('patient', $patient);
 		}
 		else
 		{
@@ -33,7 +36,8 @@ class Threads_Controller extends Base_Controller
 		}
 
 		$rules = array(
-			'title' => 'required'
+			'title' => 'required',
+            'message' => 'required',
 		);
 
 		$validation = Validator::make( Input::all(), $rules );
@@ -42,6 +46,9 @@ class Threads_Controller extends Base_Controller
 		{
 			$thread = Thread::create(array(
 				'title' => Input::get( 'title' ),
+                'message' => Input::get( 'message' ),
+                'urgency' => Input::get( 'urgency' ) === "urgent" ? "urgent" : "not_urgent",
+                'status' => "unresolved",
 				'user_id' => Auth::user()->id,
 				'patient_id' => $patient_id
 			));
