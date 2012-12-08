@@ -44,7 +44,7 @@
                 </fieldset>
 
                 <div class="form-actions">
-            	   {{Form::submit( 'Submit', array('class' => 'btn btn-primary') )}}
+            	   {{Form::submit( 'Post Issue', array('class' => 'btn btn-primary') )}}
                 </div><!-- end .form-actions -->
             </form>
         </div><!-- end .span9 -->

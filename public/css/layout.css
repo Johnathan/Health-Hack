@@ -652,3 +652,7 @@ form.log-in{
 	list-style: none;
 	margin-left: 0;
 	}
+
+.thread-description, .ui-threads{
+    padding-top: 75px;
+}

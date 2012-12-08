@@ -8,10 +8,14 @@
 
         <div class="span9">
             <section class="thread-description">
+                @if ($thread->urgency === "urgent")
+                    <span class="label label-important">Urgent</span>
+                @endif
+                <span class="posted">Posted {{ $thread->days_ago }} at {{ date("H:i", strtotime($thread->created_at)) }}</span>
                 <h1 class="thread-title">
                     {{$thread->title}}
                     <small>Last updated: {{ date("H:i jS M Y", strtotime($thread->updated_at)) }}</small>
-                </h2>
+                </h1>
 
                 <p>{{ nl2br($thread->message) }}</p>
             </section>

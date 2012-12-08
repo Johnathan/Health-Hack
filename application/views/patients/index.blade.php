@@ -14,7 +14,7 @@
 		@foreach( $patients as $patient )
 			<li class="patient-card span4">
 				<div class="avatar-frame">
-					<img src="/img/patient.jpg" />
+					<img src="{{ $patient->avatar }}" alt="{{ $patient->name }}">
 				</div>
 
 				
