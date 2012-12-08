@@ -47,50 +47,9 @@ Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', 'uses' =>
 |--------------------------------------------------------------------------
 */
 
-//
-// Logout
-Route::get('logout', array('as' => 'logout', function() {
-    // Log the user out
-    Auth::logout();
-
-    // Show the login screen
-    return Redirect::to('login');
-}));
-
-
-//
-// Login form
-Route::get('login', array('as' => 'login', function() {
-    return View::make('auth.login');
-}));
-
-
-//
-// Login action
-Route::post('login', function() {
-    // Validate the users credentials
-    $login_validation = Validator::make(Input::all(), array('email' => 'required|email', 'password' => 'required'));
-
-    if ($login_validation->fails()) {
-        return Redirect::to('login')
-            ->with_input('only', array('email'))
-            ->with_errors($login_validation);
-    }
-
-    // Validate the user
-    $credentials = array('username' => Input::get('email'), 'password' => Input::get('password'));
-
-    if ( ! Auth::attempt($credentials))
-    {
-         // User login failed
-         return Redirect::to('login')
-            ->with_input('only', array('email'))
-            ->with('login_error', 'Your email / password is incorrect');
-    }
-
-    // Go to the admin section
-    return Redirect::to('patients');
-});
+Route::get('logout', array('as' => 'logout', 'uses' => 'auth@logout'));
+Route::get('login', array('as' => 'login', 'uses' => 'auth@login'));
+Route::post('login', array('uses' => 'auth@login'));
 
 
 // Autoload controllers
