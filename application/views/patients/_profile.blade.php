@@ -1,9 +1,10 @@
+<div class="patient-img">
+    <span class="avatar-icon">
+        <img src="{{ $patient->avatar }}" alt="{{ $patient->name }}">
+    </span>
+</div>
+
 <section class="patient-profile">
-    <div class="patient-img">
-        <span class="avatar-icon">
-            <img src="{{ $patient->avatar }}" alt="{{ $patient->name }}">
-        </span>
-    </div>
     <h3>{{ $patient->name }}</h3>
     <h4><span class="wee-font">Care of</span> {{ $patient->user()->first()->name }}</h4>
 
