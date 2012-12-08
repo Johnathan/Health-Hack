@@ -1,5 +1,7 @@
 <?php
 
+Route::controller(Controller::detect());
+
 Route::get('/', array('as' => 'homepage', function()
 {
     return View::make('home.index');
