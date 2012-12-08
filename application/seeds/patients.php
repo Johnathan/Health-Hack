@@ -28,7 +28,7 @@ class Seed_Patients extends \S2\Seed {
     // Seeds with a lower number are grown first.
     public function order()
     {
-        return 1;
+        return 2;
     }
 
 }
