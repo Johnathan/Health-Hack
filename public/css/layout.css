@@ -635,3 +635,8 @@ form.log-in{
 .avatar-icon img{
     border-radius: 25px;
 }
+
+
+.thread-description{
+    padding-top: 75px;
+}
