@@ -19,5 +19,6 @@
         @endforeach
     </ol>
     @else
+    <p>No messages yet</p>
     @endif
 @endsection
