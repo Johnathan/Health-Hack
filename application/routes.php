@@ -37,8 +37,8 @@ Route::get('/', array('as' => 'homepage', function()
 */
 
 Route::get('patients', array('as' => 'patients', 'before' => 'auth', 'uses' => 'patients@index'));
-Route::get('patients/(:any)', array('before' => 'auth', 'uses' => 'patients@show'));
-Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', 'uses' => 'threads@show'));
+Route::get('patients/(:num)', array('before' => 'auth', 'uses' => 'patients@show'));
+Route::get('patients/(:num)/threads/(:num)', array('before' => 'auth', 'uses' => 'threads@show'));
 
 
 /*
