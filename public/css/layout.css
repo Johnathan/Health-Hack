@@ -399,13 +399,14 @@ header[role="banner"] {
 	height: 100px;
 }
 
-.avatar-frame{border: 2px solid #c7b89e;}
+.avatar-frame{border: 4px solid #b0b0b0; position: relative; top: -30px;}
 
 .avatar-frame,.avatar-frame img {
-	width: 50px;
-	height: 50px;
-	-webkit-border-radius: 30px; /* Saf3+, Chrome */
-	border-radius: 30px; /* Opera 10.5, IE 9 */
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	-webkit-border-radius: 50px; /* Saf3+, Chrome */
+	border-radius: 50px; /* Opera 10.5, IE 9 */
 	/*-moz-border-radius: 30px; Disabled for FF1+ */
 }
 
@@ -420,6 +421,7 @@ header[role="banner"] {
 	background: #f4f4ef;
 	float: left;
 	margin: 10px 10px 0 10px;
+	border-radius: 3px;
 }
 
 .patient-card:nth-child(1n){
@@ -428,4 +430,46 @@ header[role="banner"] {
 	
 .patient-card:nth-child(4n) {
 	margin-right: 0;
+}
+
+.patient-card-left {
+	width: 60px;
+	float: left;
+}
+
+.patient-card-right {
+	width: 100%;
+	float: left;
+	}
+	
+.card-title {
+	font-family: "Merriweather", serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+.card-footer {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #666;
+	text-transform: uppercase;
+	font-size: .9em;
+	line-height: 0;
+	
+}
+
+.card-footer span {
+background: rgba(0,0,0,.05);
+padding: 10px 8px;
+}
+
+.patient-card-right a {
+	text-decoration: none;
+	color: #242f36;
+	}
+	
+.card-rule {
+	color: #b0b0b0;
+	margin: 10px 0;
 }
