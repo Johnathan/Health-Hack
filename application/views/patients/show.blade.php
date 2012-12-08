@@ -16,5 +16,6 @@
         @else
             <p>{{ $patient->name }} has no threads yet.</p>
         @endif
+		<a href="/patients/{{$patient->id}}/threads/new">Add Thread</a>
     </section>
 @endsection

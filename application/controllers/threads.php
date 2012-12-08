@@ -1,6 +1,6 @@
 <?php
 
-class Threads_Controller extends Base_Controller 
+class Threads_Controller extends Base_Controller
 {
     public $restful = true;
 
@@ -13,4 +13,46 @@ class Threads_Controller extends Base_Controller
             ->with( 'patient', $patient );
     }
 
+	public function get_create( $patient_id = NULL )
+	{
+		if( Auth::user()->patients()->where_id( $patient_id )->first() )
+		{
+			return View::make('patients.threads.create');
+		}
+		else
+		{
+			return Redirect::to( '/' );
+		}
+	}
+
+	public function post_create( $patient_id = NULL )
+	{
+		if( ! Auth::user()->patients()->where_id( $patient_id )->first() )
+		{
+			return Redirect::to( '/' );
+		}
+
+		$rules = array(
+			'title' => 'required'
+		);
+
+		$validation = Validator::make( Input::all(), $rules );
+
+		if( $validation->passes() )
+		{
+			$thread = Thread::create(array(
+				'title' => Input::get( 'title' ),
+				'user_id' => Auth::user()->id,
+				'patient_id' => $patient_id
+			));
+
+			$thread->save();
+
+			return Redirect::to( 'patients/' . $patient_id . '/threads/' . $thread->id );
+		}
+		else
+		{
+			return Redirect::to( 'patients/' . $patient_id . '/threads/new' )->with_errors( $validation->errors );
+		}
+	}
 }
