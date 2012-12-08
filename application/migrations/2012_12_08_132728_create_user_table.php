@@ -2,21 +2,20 @@
 
 class Create_User_Table {
 
-	public function up()
+    public function up()
     {
-		Schema::create('user', function($table) {
-			$table->increments('id');
-			$table->string( 'type' );
-			$table->string( 'name' );
-			$table->timestamps();
-	});
+        Schema::create('users', function($table) {
+            $table->increments('id');
+            $table->string( 'type' );
+            $table->string( 'name' );
+            $table->timestamps();
+       });
 
     }
 
-	public function down()
+    public function down()
     {
-		Schema::drop('user');
-
+        Schema::drop('users');
     }
 
 }
