@@ -2,7 +2,7 @@
 
 class Patient extends Eloquent
 {
-	public function gp()
+	public function user()
 	{
 		return $this->belongs_to( 'user' );
 	}
