@@ -10,6 +10,7 @@
 Asset::add('bootstrap-styles', 'css/bootstrap.min.css');
 Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css', 'bootstrap-styles');
 Asset::add('layout-styles', 'css/layout.css', 'bootstrap-responsive');
+Asset::add('profile-styles', 'css/profile.css', 'layout-styles');
 // Asset::container('admin')->add('boostrap', 'css/bootstrap.min.css');
 // Asset::container('admin')->add('boostrap-responsive', 'css/bootstrap-responsive.min.css', 'boostrap');
 // Asset::container('admin')->add('admin-layout-styles', 'css/admin/layout.css', 'boostrap-responsive');

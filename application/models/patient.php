@@ -24,4 +24,9 @@ class Patient extends Eloquent
 		$interval = $today->diff( $date_of_birth );
 		return $interval->format( '%y' );
 	}
+
+    public function get_avatar()
+    {
+        return $this->get_attribute('avatar') ? $this->get_attribute('avatar') : "/img/users/default.png";
+    }
 }
