@@ -36,30 +36,9 @@ Route::get('/', array('as' => 'homepage', function()
 |--------------------------------------------------------------------------
 */
 
-Route::get('patients', array('as' => 'patients', 'before' => 'auth', function()
-{
-	$patients = Auth::user()->patients()->get();
-    return View::make('patients.index')->with( 'patients', $patients );
-}));
-
-
-Route::get('patients/(:any)', array('before' => 'auth', function($patient_id)
-{
-	$patient = Auth::user()->patients()->where_id( $patient_id )->first();
-    return View::make('patients.show')
-        ->with( 'patient', $patient );
-}));
-
-
-Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', function($patient_id, $thread_id)
-{
-	$thread = Auth::user()->patients()->where_id( $patient_id )->first()->threads()->where_id( $thread_id )->first();
-    $patient = $thread->patient()->first();
-
-    return View::make('patients.threads.show')
-        ->with( 'thread', $thread )
-        ->with( 'patient', $patient );
-}));
+Route::get('patients', array('as' => 'patients', 'before' => 'auth', 'uses' => 'patients@index'));
+Route::get('patients/(:any)', array('before' => 'auth', 'uses' => 'patients@show'));
+Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', 'uses' => 'threads@show'));
 
 
 /*
@@ -113,7 +92,8 @@ Route::post('login', function() {
     return Redirect::to('patients');
 });
 
-//This should be taken out later
+
+// Autoload controllers
 Route::controller(Controller::detect());
 
 
