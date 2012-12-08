@@ -16,6 +16,47 @@
                     {{ $errors->has('address') ? '<span class="help-inline">Address is required</span>' : '' }}
                 </div>
             </div>
+
+           <div class="control-group{{ $errors->has('date_of_birth') ? ' error' : '' }}">
+                <label for="address" class="control-label">Date of Birth</label>
+                <div class="controls">
+                    <input type="text" name="date_of_birth" id="date_of_birth" class="input-xxlarge" value="{{ $errors->has('date_of_birth') ? Input::old('date_of_birth') : $patient->date_of_birth }}">
+                    {{ $errors->has('date_of_birth') ? '<span class="help-inline">Date of Birth</span>' : '' }}
+                </div>
+            </div>
+
+           <div class="control-group{{ $errors->has('gender') ? ' error' : '' }}">
+                <label for="gender" class="control-label">Gender</label>
+                <div class="controls">
+                    <input type="text" name="gender" id="gender" class="input-xxlarge" value="{{ $errors->has('gender') ? Input::old('gender') : $patient->gender }}">
+                    {{ $errors->has('gender') ? '<span class="help-inline">Gender is Required</span>' : '' }}
+                </div>
+            </div>
+
+           <div class="control-group{{ $errors->has('medical_history') ? ' error' : '' }}">
+                <label for="address" class="control-label">Medical History</label>
+                <div class="controls">
+                    <input type="text" name="medical_history" id="medical_history" class="input-xxlarge" value="{{ $errors->has('medical_history') ? Input::old('medical_history') : $patient->medical_history }}">
+                    {{ $errors->has('address') ? '<span class="help-inline">Medical History is Required</span>' : '' }}
+                </div>
+            </div>
+
+           <div class="control-group{{ $errors->has('medication') ? ' error' : '' }}">
+                <label for="medication" class="control-label">Medication</label>
+                <div class="controls">
+                    <input type="text" name="medication" id="medication" class="input-xxlarge" value="{{ $errors->has('medication') ? Input::old('medication') : $patient->medication }}">
+                    {{ $errors->has('medication') ? '<span class="help-inline">Medication is Required</span>' : '' }}
+                </div>
+            </div>
+
+           <div class="control-group{{ $errors->has('allergies') ? ' error' : '' }}">
+                <label for="allergies" class="control-label">Allergies</label>
+                <div class="controls">
+                    <input type="text" name="allergies" id="allergies" class="input-xxlarge" value="{{ $errors->has('allergies') ? Input::old('allergies') : $patient->allergies }}">
+                    {{ $errors->has('allergies') ? '<span class="help-inline">Allergies is required</span>' : '' }}
+                </div>
+            </div>
+
         </fieldset>
 
         <div class="form-actions">
