@@ -637,6 +637,6 @@ form.log-in{
 }
 
 
-.thread-description{
+.thread-description, .ui-threads{
     padding-top: 75px;
 }
