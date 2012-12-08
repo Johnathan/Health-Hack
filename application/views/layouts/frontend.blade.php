@@ -23,12 +23,7 @@
 <body>
 
 <header role="banner">
-    <a class="brand" href="{{ URL::to_route('patients') }}">second opinion</a>
-    <nav>
-        <ul class="ui-horizontal-list">
-            <li><a href="{{ URL::to_route('patients') }}">patients</a></li>
-        </ul>
-    </nav>
+    <a class="brand" href="{{ URL::to_route('homepage') }}">second opinion</a>
 </header>
 
 <section role="main" class="main-body">
