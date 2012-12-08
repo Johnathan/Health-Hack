@@ -376,6 +376,8 @@ textarea {
  
 body {
 	background: #f2f2f2;
+    /*background-image: -webkit-linear-gradient(top,#5BC0DE,#2F96B4);*/
+    
 }
 
 table {
@@ -397,7 +399,7 @@ header[role="banner"] {
 	
 }
 
-.avatar-frame{border: 4px solid #b0b0b0; position: relative; top: -30px; margin-bottom:-30px;}
+.avatar-frame{border: 4px solid #b0b0b0; position: relative; top: -10px; margin-bottom:-30px;}
 
 .avatar-frame,.avatar-frame img {
 	width: 80px;
@@ -414,15 +416,19 @@ header[role="banner"] {
 
 .patient-card {
 	display: block;
-	width: 200px;
-	padding: 20px;
-	background: #f4f4ef;
+
+	background: #fff;
 	float: left;
-	margin: 10px 10px 0 10px;
+	margin: 20px 10px 0 10px;
 	border-radius: 3px;
-	box-shadow: 0px
+	box-shadow: 0px 3px 6px rgba(0,0,0,.1);
 }
 
+.patient-card:hover {
+	background: #eee;
+}
+
+/*
 .patient-card:nth-child(1n){
 	margin-left: 0;
 	}
@@ -430,6 +436,7 @@ header[role="banner"] {
 .patient-card:nth-child(4n) {
 	margin-right: 0;
 }
+*/
 
 .patient-card-left {
 	width: 60px;
@@ -445,6 +452,7 @@ header[role="banner"] {
 	font-family: "Merriweather", serif;
 	font-weight: 700;
 	text-align: center;
+	font-size: 1.2em;
 }
 
 .card-footer {
@@ -455,6 +463,7 @@ header[role="banner"] {
 	text-transform: uppercase;
 	font-size: .9em;
 	line-height: 1;
+	margin-left: 20px;
 	
 }
 
@@ -499,8 +508,29 @@ float: left;
 .ui-horizontal-list {
 	list-style: none;
 	}
+<<<<<<< HEAD
+	
+.header-instructions {
+	background: #d4dde2;
+	width: 100%;
+	float: left;
+	margin-bottom: 25px;
+	}
+	
+.instruction {
+	font-family: "Merriweather", serif;
+	font-weight: 300;
+	padding: 20px 20px 5px;
+	}
+	
+.supporting-text {
+	font-family: "Lato", sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	padding: 5px 20px;
+}
 
-h1 {
+.elevator h1 {
     font-size: 52px;
     line-height: 62px;
     margin-bottom: 25px;
@@ -564,6 +594,31 @@ p.intro {
 .elevator{
     width: 685px;
     margin: 0 auto;
+}
+
+/*  Threads */
+
+.thread-title {
+	font-size: 2em;
+}
+.elevator h1{
+    margin-top: 180px;
+}
+
+div.log-in-form{
+ 
+
+}
+
+form.log-in{
+    width: 285px;
+    border: 1px solid #ccc;
+    margin: 30px auto;
+    padding: 25px;
+    clear:both;
+    border-radius: 3px;
+    background: #fff;
+
 }
 
 
