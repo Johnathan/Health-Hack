@@ -23,6 +23,7 @@ class Messages_Controller extends Base_Controller
         $message->message = Input::get('message');
         $message->user_id = $user->id;
         $thread->messages()->insert($message);
+        $thread->touch(); // Update our last updated on the thread
 
         return Redirect::to("patients/$patient_id/threads/$thread_id");
     }
