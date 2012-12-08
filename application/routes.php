@@ -39,6 +39,8 @@ Route::get('/', array('as' => 'homepage', function()
 Route::get('patients', array('as' => 'patients', 'before' => 'auth', 'uses' => 'patients@index'));
 Route::get('patients/(:any)', array('before' => 'auth', 'uses' => 'patients@show'));
 Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', 'uses' => 'threads@show'));
+Route::get('patients/(:any)/threads/create', array('before' => 'auth', 'uses' => 'threads@create'));
+Route::post('patients/(:any)/threads/create', array('before' => 'auth', 'uses' => 'threads@create'));
 
 
 /*
@@ -49,6 +51,8 @@ Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', 'uses' =>
 
 Route::get('logout', array('as' => 'logout', 'uses' => 'auth@logout'));
 Route::get('login', array('as' => 'login', 'uses' => 'auth@login'));
+Route::get('register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::post('register', array('as' => 'register', 'uses' => 'auth@register'));
 Route::post('login', array('uses' => 'auth@login'));
 
 
