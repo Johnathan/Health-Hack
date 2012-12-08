@@ -53,11 +53,8 @@ Route::get('patients/(:any)', array('before' => 'auth', function($patient_id)
 
 Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', function($patient_id, $thread_id)
 {
-	$patient = Auth::user()->patients()->where_id( $patient_id )->first();
-    $thread = $patient->threads()->where_id( $thread_id )->get();
-    return View::make('patients.threads.show')
-        ->with( 'patient', $patient )
-        ->with( 'thread', $thread );
+	$thread = Auth::user()->patients()->where_id( $patient_id )->first()->threads()->where_id( $thread_id )->first();
+    return View::make('patients.threads.show')->with( 'thread', $thread );;
 }));
 
 
