@@ -9,9 +9,10 @@
     </header>
 
 	@if( isset($patients) && count($patients) > 0 )
+		<div class="row">
 		<ul class="patient-cards">
 		@foreach( $patients as $patient )
-			<li class="patient-card">
+			<li class="patient-card span4">
 				<div class="avatar-frame">
 					<img src="/img/patient.jpg" />
 				</div>
@@ -28,6 +29,7 @@
 			</li>
 		@endforeach
 		</ul>
+		</div>
 	@else
 		<p>You have no patients added yet.</p>
 	@endif

@@ -8,7 +8,7 @@
 
         <div class="span9">
             <section class="thread-description">
-                <h2>
+                <h1 class="thread-title">
                     {{$thread->title}}
                     <small>Last updated: {{ date("H:i jS M Y", strtotime($thread->updated_at)) }}</small>
                 </h2>
