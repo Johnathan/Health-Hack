@@ -549,6 +549,18 @@ p.intro {
 }
 
 div.log-in-form{
+ 
+
+}
+
+form.log-in{
+    width: 285px;
+    border: 1px solid #ccc;
+    margin: 30px auto;
+    padding: 25px;
+    clear:both;
+    border-radius: 3px;
     background: #fff;
+
 
 }
