@@ -16,4 +16,23 @@ class Message extends Eloquent
     {
         return $this->belongs_to( 'user' );
     }
+
+    public function get_days_ago()
+    {
+        $today = new DateTime;
+        $created = new DateTime( $this->get_attribute('created_at') );
+        $interval = $today->diff( $created );
+        $days = $interval->format( '%d' );
+
+        if ($days === "0") {
+            return "today";
+        }
+        elseif ($days === "1") {
+            return "yesterday";
+        }
+        else {
+            return $days. " days ago";
+        }
+    }
+
 }
