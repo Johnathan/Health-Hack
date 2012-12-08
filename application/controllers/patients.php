@@ -1,6 +1,6 @@
 <?php
 
-class Patients_Controller extends Base_Controller 
+class Patients_Controller extends Base_Controller
 {
     public $restful = true;
 
@@ -51,6 +51,11 @@ class Patients_Controller extends Base_Controller
 
         $patient->name = Input::get('name');
         $patient->address = Input::get('address');
+		$patient->date_of_birth = Input::get( 'date_of_birth' );
+		$patient->gender = Input::get( 'gender' );
+		$patient->medical_history = Input::get( 'medical_history' );
+		$patient->medication = Input::get( 'medication' );
+		$patient->allergies = Input::get( 'allergies' );
 
         if ($patientValidator->fails()) {
             return View::make($id ? 'patients.edit' : 'patients.new')
