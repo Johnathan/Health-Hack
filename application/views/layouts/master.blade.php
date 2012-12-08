@@ -22,14 +22,15 @@
 <body>
 <header role="banner">
 	<div class="container">
-		<img src="/img/so-logo-sm.png"/>
+		<a class="brand" href="{{ URL::to_route('patients') }}"><img src="/img/so-logo-sm.png"/></a>
 		@include('auth._login_menu')
-		<a class="brand" href="{{ URL::to_route('patients') }}">second opinion</a>
+		
 		<nav>
 			<ul class="ui-horizontal-list">
-				<li><a href="{{ URL::to_route('patients') }}">patients</a></li>
+				<li><a href="{{ URL::to_route('patients') }}" class="button">patients</a></li>
 			</ul>
 		</nav>
+		
     </div>
 </header>
 
