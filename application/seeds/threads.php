@@ -7,9 +7,42 @@ class Seed_Threads extends \S2\Seed {
         // Get Dr Nigel
         $user = User::where('email', '=', "nigel@nhs.com")->first();
 
+        // First patient
         $thread = new Thread;
-        $thread->name = "Jacob Smith";
-        $thread->address = "121 Coryville Avenue, Belfast BT1 3BE";
+        $thread->title = "Diabetes";
+        $thread->patient_id = 1;
+        $thread->user_id = $user->id;
+        $thread->save();
+
+        $thread = new Thread;
+        $thread->title = "Bad back";
+        $thread->patient_id = 1;
+        $thread->user_id = $user->id;
+        $thread->save();
+
+        // Second patient
+        $thread = new Thread;
+        $thread->title = "Wheat allergy concerns";
+        $thread->patient_id = 2;
+        $thread->user_id = $user->id;
+        $thread->save();
+
+        // Third patient
+        $thread = new Thread;
+        $thread->title = "Ear infection";
+        $thread->patient_id = 3;
+        $thread->user_id = $user->id;
+        $thread->save();
+
+        $thread = new Thread;
+        $thread->title = "Throat infection";
+        $thread->patient_id = 3;
+        $thread->user_id = $user->id;
+        $thread->save();
+
+        $thread = new Thread;
+        $thread->title = "Chesty cough";
+        $thread->patient_id = 3;
         $thread->user_id = $user->id;
         $thread->save();
     }
