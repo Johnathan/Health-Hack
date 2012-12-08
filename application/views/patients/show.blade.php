@@ -1,6 +1,7 @@
 @layout('layouts.master')
 
 @section('content')
+    <a href="{{ URL::to('/patients/edit/'.$patient->id) }}">Edit</a>
     @include('patients._profile')
 
     <section class="ui-threads">
