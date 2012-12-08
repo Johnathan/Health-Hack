@@ -1,16 +1,16 @@
 @layout('layouts.master')
 
 @section('content')
-    <h2>All patients</h2>
+    <h2>My patients</h2>
 
-	@if( $patients )
+	@if( isset($patients) && count($patients) > 0 )
 		<ul>
 		@foreach( $patients as $patient )
-			<li><a href="/patients/{{$patient->id}}">{{$patient->name}}</a></li>
+			<li><a href="{{ URL::to('/patients/'.$patient->id) }}">{{$patient->name}}</a></li>
 		@endforeach
 		</ul>
 	@else
-		<p>No Patients</p>
+		<p>You have no patients added yet.</p>
 	@endif
 
 
