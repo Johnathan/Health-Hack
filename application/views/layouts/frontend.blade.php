@@ -23,6 +23,7 @@
 <body>
 
 <header role="banner">
+    @include('auth._login_menu')
     <a class="brand" href="{{ URL::to_route('homepage') }}">second opinion</a>
 </header>
 
