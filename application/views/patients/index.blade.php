@@ -5,8 +5,8 @@
 
 	@if( $patients )
 		<ul>
-		@foreach( $patiens as $patient )
-			<li>{{$patient->name}}</li>
+		@foreach( $patients as $patient )
+			<li><a href="/patients/{{$patient->id}}">{{$patient->name}}</a></li>
 		@endforeach
 		</ul>
 	@else

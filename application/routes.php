@@ -45,7 +45,7 @@ Route::get('patients', array('as' => 'patients', 'before' => 'auth', function()
 
 Route::get('patients/(:any)', array('before' => 'auth', function($patient_id)
 {
-	$patient = Auth::user()->patients()->where_id( $patient_id )->get();
+	$patient = Auth::user()->patients()->where_id( $patient_id )->first();
     return View::make('patients.show')->with( 'patient', $patient );
 }));
 
