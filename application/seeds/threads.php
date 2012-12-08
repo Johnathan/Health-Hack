@@ -51,7 +51,7 @@ class Seed_Threads extends \S2\Seed {
     // Seeds with a lower number are grown first.
     public function order()
     {
-        return 2;
+        return 3;
     }
 
 }
