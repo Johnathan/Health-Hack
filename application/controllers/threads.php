@@ -15,9 +15,12 @@ class Threads_Controller extends Base_Controller
 
 	public function get_create( $patient_id = NULL )
 	{
+        $patient = Auth::user()->patients()->where_id( $patient_id )->first();
+
 		if( Auth::user()->patients()->where_id( $patient_id )->first() )
 		{
-			return View::make('patients.threads.create');
+			return View::make('patients.threads.create')
+                ->with('patient', $patient);
 		}
 		else
 		{

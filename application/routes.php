@@ -7,13 +7,16 @@
 */
 
 // Stylesheets
-Asset::add('layout-styles', 'css/layout.css');
+Asset::add('bootstrap-styles', 'css/bootstrap.min.css');
+Asset::add('bootstrap-responsive', 'css/bootstrap-responsive.min.css', 'bootstrap-styles');
+Asset::add('layout-styles', 'css/layout.css', 'bootstrap-responsive');
 // Asset::container('admin')->add('boostrap', 'css/bootstrap.min.css');
 // Asset::container('admin')->add('boostrap-responsive', 'css/bootstrap-responsive.min.css', 'boostrap');
 // Asset::container('admin')->add('admin-layout-styles', 'css/admin/layout.css', 'boostrap-responsive');
 
 
 // JavaScripts
+Asset::add('bootstrap-js', 'js/bootstrap.min.js');
 // Asset::container('admin')->add('jquery', 'js/jquery-1.8.2.min.js');
 // Asset::container('admin')->add('bootstrap-js', 'js/bootstrap.min.js', 'jquery');
 
