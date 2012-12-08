@@ -500,6 +500,7 @@ float: left;
 .ui-horizontal-list {
 	list-style: none;
 	}
+<<<<<<< HEAD
 	
 .header-instructions {
 	background: #d4dde2;
@@ -520,3 +521,46 @@ float: left;
 	font-weight: 300;
 	padding: 5px 20px;
 }
+=======
+
+h1 {
+    font-size: 52px;
+    line-height: 62px;
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: 900;
+    font-family: Lato;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-transform: none;
+    font-size: 28px;
+    line-height: 41px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-style: normal;
+    font-family: Lato;
+    text-align: center;
+}
+
+
+
+p.intro {
+    text-indent: 0px;
+    margin-bottom: 25px;
+    line-height: 50px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    font-family: Lato;
+}
+
+.elevator{
+    width: 685px;
+    margin: 0 auto;
+}
+>>>>>>> d5a296e6b7e11f4eb7b03dc28872645371800687

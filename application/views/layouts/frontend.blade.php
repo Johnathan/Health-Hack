@@ -23,8 +23,13 @@
 <body>
 
 <header role="banner">
-    @include('auth._login_menu')
-    <a class="brand" href="{{ URL::to_route('homepage') }}">second opinion</a>
+	<div class="container">
+		<a class="brand" href="{{ URL::to_route('patients') }}"><img src="/img/so-logo-sm.png"/></a>
+		@include('auth._login_menu')
+		
+		
+		
+    </div>
 </header>
 
 <section role="main" class="main-body">
