@@ -6,7 +6,7 @@
 <head>
 
 <!-- Title &amp; Meta -->
-<title>second opinion</title>
+<title>Second Opinion&trade;</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
@@ -19,21 +19,24 @@
 <![endif]-->
 
 </head>
-
 <body>
-
 <header role="banner">
-    @include('auth._login_menu')
-    <a class="brand" href="{{ URL::to_route('patients') }}">second opinion</a>
-    <nav>
-        <ul class="ui-horizontal-list">
-            <li><a href="{{ URL::to_route('patients') }}">patients</a></li>
-        </ul>
-    </nav>
+	<div class="container">
+		<img src="/img/so-logo-sm.png"/>
+		@include('auth._login_menu')
+		<a class="brand" href="{{ URL::to_route('patients') }}">second opinion</a>
+		<nav>
+			<ul class="ui-horizontal-list">
+				<li><a href="{{ URL::to_route('patients') }}">patients</a></li>
+			</ul>
+		</nav>
+    </div>
 </header>
 
 <section role="main" class="main-body">
+	<div class="container">
     @yield('content')
+    </div>
 </section><!-- end .main-body -->
 
 {{ Asset::scripts() }}

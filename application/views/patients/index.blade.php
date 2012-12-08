@@ -6,7 +6,12 @@
 	@if( isset($patients) && count($patients) > 0 )
 		<ul>
 		@foreach( $patients as $patient )
-			<li><a href="{{ URL::to('/patients/'.$patient->id) }}">{{$patient->name}}</a></li>
+			<li class="patient-card">
+				<div class="avatar-frame">
+					<img src="/img/patient.jpg" />
+				</div>
+			<a href="{{ URL::to('/patients/'.$patient->id) }}">{{$patient->name}}</a>
+			</li>
 		@endforeach
 		</ul>
 	@else
