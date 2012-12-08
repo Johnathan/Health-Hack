@@ -2,20 +2,24 @@
 
 @section('content')
     <a href="{{ URL::to('/patients/edit/'.$patient->id) }}">Edit</a>
-    @include('patients._profile')
+    <div class="row">
+        <div class="span3">
+        @include('patients._profile')
+        </div><!-- end .span3 -->
 
-    <section class="ui-threads">
-        @if( $patient->threads()->get() )
-            <ol class="ui-threads-list">
-            @foreach( $patient->threads()->get() as $thread )
-                <li>
-                    @include('patients.threads._list-item')
-                </li>
-            @endforeach
-            </ol>
-        @else
-            <p>{{ $patient->name }} has no threads yet.</p>
-        @endif
-		<a href="/patients/{{$patient->id}}/threads/new">Add Thread</a>
-    </section>
+        <section class="ui-threads span9">
+            @if( $patient->threads()->get() )
+                <ol class="ui-threads-list">
+                @foreach( $patient->threads()->get() as $thread )
+                    <li>
+                        @include('patients.threads._list-item')
+                    </li>
+                @endforeach
+                </ol>
+            @else
+                <p>{{ $patient->name }} has no threads yet.</p>
+            @endif
+    		<a href="/patients/{{$patient->id}}/threads/new">Add Thread</a>
+        </section>
+    </div><!-- end .row -->
 @endsection
