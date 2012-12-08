@@ -1,26 +1,19 @@
 @layout('layouts.master')
 
 @section('content')
-<section class="patient-profile">
-    <h2>{{ $patient->name }}</h2>
-
-    <div class="patient-address">
-        <strong>Address</strong> {{ $patient->address }}
-    </div>
-</section>
+@include('patients._profile')
 
 <section class="ui-threads">
-    @if( isset($threads) && count($threads) > 0 )
+    @if( $patient->threads()->get() )
         <ol class="ui-threads-list">
-        @foreach( $threads as $thread )
+        @foreach( $patient->threads()->get() as $thread )
             <li>
-                <h3><a href="{{ URL::to('/patients/'.$patient->id).'/threads/'.$thread->id }}">{{$thread->title}}</a></h3>
-                
+                @include('patients.threads._list-item')
             </li>
         @endforeach
         </ol>
     @else
-        <p>You have no patients added yet.</p>
+        <p>{{ $patient->name }} has no threads yet.</p>
     @endif
 </section>
 @endsection
