@@ -1,7 +1,7 @@
 @layout('layouts.master')
 
 @section('content')
-    <h2>Home</h2>
+    <h2>All patients</h2>
 
 
 @endsection
