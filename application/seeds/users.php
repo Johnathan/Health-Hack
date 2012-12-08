@@ -10,6 +10,13 @@ class Seed_Users extends \S2\Seed {
         $user->email = 'nigel@nhs.com';
         $user->password = Hash::make('testing');
         $user->save();
+
+        $user = new User;
+        $user->type = 'specialist';
+        $user->name = 'Dr John McClain';
+        $user->email = 'john.mcclain@nhs.com';
+        $user->password = Hash::make('testing');
+        $user->save();
     }
 
     // This is optional. It lets you specify the order each seed is grown.
