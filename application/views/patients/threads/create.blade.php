@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('patients._profile')
+
     <h2>Post a new issue</h2>
 
     {{Form::open()}}
