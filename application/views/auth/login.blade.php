@@ -12,6 +12,7 @@ Please Login
         </div>
     @endif
 
+<div class="log-in-form">
     <div class="ui-box auth-box">
         <form method="post" action="{{ URL::current() }}">
             <div class="control-group{{ $errors->has('email') ? ' error' : '' }}">
@@ -39,4 +40,5 @@ Please Login
             </div>
         </form>
     </div>
+</div>
 @endsection

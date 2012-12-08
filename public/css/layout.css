@@ -376,6 +376,8 @@ textarea {
  
 body {
 	background: #f2f2f2;
+    /*background-image: -webkit-linear-gradient(top,#5BC0DE,#2F96B4);*/
+    
 }
 
 table {
@@ -500,7 +502,7 @@ float: left;
 	list-style: none;
 	}
 
-h1 {
+.elevator h1 {
     font-size: 52px;
     line-height: 62px;
     margin-bottom: 25px;
@@ -539,4 +541,14 @@ p.intro {
 .elevator{
     width: 685px;
     margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+.elevator h1{
+    margin-top: 180px;
+}
+
+div.log-in-form{
+    background: #fff;
+
 }
