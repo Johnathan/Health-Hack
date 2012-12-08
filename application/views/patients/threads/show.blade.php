@@ -3,7 +3,10 @@
 @section('content')
     @include('patients._profile')
 
-    <h2>{{$thread->title}}</h2>
+    <h2>
+        {{$thread->title}}
+        <small>Last updated: {{ date("H:i jS M Y", strtotime($thread->updated_at)) }}</small>
+    </h2>
 
     @include('patients.threads.messages._form')
 

@@ -9,7 +9,7 @@ class Thread extends Eloquent
 
 	public function messages()
 	{
-		return $this->has_many( 'message' );
+		return $this->has_many( 'message' )->order_by( 'updated_at', 'DESC' );
 	}
 
     public function user()
