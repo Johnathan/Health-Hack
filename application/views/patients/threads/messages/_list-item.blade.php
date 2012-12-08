@@ -1,6 +1,6 @@
 <section class="message-metadata">
     <span class="avatar-icon">
-        <img src="{{ $message->user()->first()->get_avatar() }}" alt="{{ $message->user()->first()->name }}">
+        <img src="{{ $message->user()->first()->avatar }}" alt="{{ $message->user()->first()->name }}">
     </span>
     <h4>{{ $message->user()->first()->name }}</h4>
     <time>{{ date("jS F Y", strtotime($message->created_at)) }}</time>

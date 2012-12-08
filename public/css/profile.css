@@ -1,0 +1,55 @@
+.patient-img .avatar-icon img, .patient-img .avatar-icon{
+    border-radius: 75px;
+}
+
+.patient-img .avatar-icon{
+    display: block;
+    border-radius: 75px;
+    width: 150px;
+    height: 150px;
+    border: solid 5px #f2f2f2;
+    margin: 0 auto;
+    z-index: 1000px;
+    position: relative;
+}
+
+
+.patient-img{
+    height: 75px;
+    text-align: center;
+}
+
+.patient-img img{
+    height: 150px;
+}
+
+.patient-profile{
+    padding-top: 85px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.patient-profile > h3, .patient-profile > h4{
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+}
+
+.patient-profile h3{
+    margin-top: 20px;
+}
+
+.patient-profile-info{
+    background: #f9f9f9;
+    border-top: solid 1px #e1e1de;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.patient-profile-info h4{
+    font-size: 1.125em;
+}
+
+.patient-profile-info .content-block{
+    margin-bottom: 20px;
+}

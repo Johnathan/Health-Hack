@@ -14,7 +14,7 @@
 			<li class="patient-card">
 				
 					<div class="avatar-frame">
-						<img src="/img/patient.jpg" />
+                        <img src="{{ $patient->avatar }}" alt="{{ $patient->name }}">
 					</div>
 				
 				
