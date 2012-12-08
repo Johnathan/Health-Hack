@@ -1,22 +1,31 @@
+<div class="patient-img">
+    <span class="avatar-icon">
+        <img src="{{ $patient->avatar }}" alt="{{ $patient->name }}">
+    </span>
+</div>
+
 <section class="patient-profile">
-    <div class="patient-img">
-        <span class="avatar-icon">
-            <div class="avatar-frame">
-					<img src="/img/patient.jpg">
-				</div>
-        </span>
-    </div>
-    <h2 class="patient-profile">{{ $patient->name }}</h2>
-    
-    <h3>Care of {{ $patient->user()->first()->name }}</h3>
+    <h3>{{ $patient->name }}</h3>
+    <h4><span class="wee-font">Care of</span> {{ $patient->user()->first()->name }}</h4>
 
-    <div class="patient-address">
-        <strong>Address</strong> {{ $patient->address }}
-    </div>
+    <section class="patient-profile-info">
+        <div class="content-block">
+    	   <h4>Age:&nbsp;&nbsp;<span class="info">{{$patient->age}}</span>&nbsp;&nbsp;&nbsp;&nbsp;Gender:&nbsp;&nbsp;<span class="info">{{$patient->gender}}</span></h4>
+        </div>
 
-	Age: {{$patient->age}}<br />
-	Gender: {{$patient->gender}}<br />
-	Medical History: {{$patient->history}}<br />
-	Medication: {{$patient->medication}}<br />
-	Allergies: {{$patient->allergies}}<br />
+        <div class="content-block">
+        	<h4>Medical History:</h4>
+            {{$patient->medical_history}}
+        </div>
+
+        <div class="content-block">
+        	<h4>Medication:</h4>
+            {{$patient->medication}}
+        </div>
+
+        <div class="content-block">
+        	<h4>Allergies:</h4>
+            {{$patient->allergies}}
+        </div>
+    </section>
 </section>

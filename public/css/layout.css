@@ -545,6 +545,31 @@ h2 {
     text-align: center;
 }
 
+h3{
+    font-family: "Merriweather", serif;
+    text-transform: none;
+    font-weight: normal;
+    color: #28323b;
+}
+
+
+h4{
+    color: #b1b7ba;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+h4 .info{
+    color: #333;
+    text-transform: none;
+}
+
+.wee-font{
+    font-family: "Merriweather", serif;
+    text-transform: none;
+    font-weight: normal;
+}
+
 
 
 p.intro {
