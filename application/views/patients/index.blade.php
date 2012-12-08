@@ -16,6 +16,7 @@
 				<div class="avatar-frame">
 					<img src="/img/patient.jpg" />
 				</div>
+
 				
 				<div class="patient-card-right">
 					<a href="{{ URL::to('/patients/'.$patient->id) }}"><h3 class="card-title">{{$patient->name}}</h3></a>
