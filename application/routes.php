@@ -38,18 +38,21 @@ Route::get('/', array('as' => 'homepage', function()
 
 Route::get('patients', array('as' => 'patients', 'before' => 'auth', function()
 {
-    return View::make('patients.index');
+	$patients = Auth::user()->patients()->get();
+    return View::make('patients.index')->with( 'patients', $patients );
 }));
 
 
 Route::get('patients/(:any)', array('before' => 'auth', function($patient_id)
 {
-    return View::make('patients.show');
+	$patient = Auth::user()->patients()->where_id( $patient_id )->get();
+    return View::make('patients.show')->with( 'patient', $patient );
 }));
 
 
 Route::get('patients/(:any)/threads/(:any)', array('before' => 'auth', function($patient_id, $thread_id)
 {
+	$thread = Auth::user()->patients()->where_id( $patient_id )->threads()->where_id( $thread_id )->get();
     return View::make('patients.threads.show');
 }));
 
