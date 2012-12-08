@@ -2,9 +2,9 @@
 
 class Threads_Controller extends Base_Controller
 {
-   public $restful = true;
+    public $restful = true;
 
-   public function get_show($patient_id, $thread_id) {
+    public function get_show($patient_id, $thread_id) {
         $thread = Auth::user()->patients()->where_id( $patient_id )->first()->threads()->where_id( $thread_id )->first();
         $patient = $thread->patient()->first();
 
@@ -27,11 +27,7 @@ class Threads_Controller extends Base_Controller
 
 	public function post_create( $patient_id = NULL )
 	{
-		if( Auth::user()->patients()->where_id( $patient_id )->first() )
-		{
-			return View::make('patients.threads.create');
-		}
-		else
+		if( ! Auth::user()->patients()->where_id( $patient_id )->first() )
 		{
 			return Redirect::to( '/' );
 		}
@@ -52,11 +48,11 @@ class Threads_Controller extends Base_Controller
 
 			$thread->save();
 
-			return Redirect::to( 'threads/show/' . $thread->id );
+			return Redirect::to( 'patients/' . $patient_id . '/threads/' . $thread->id );
 		}
 		else
 		{
-			return Redirect::to( 'threads/create' )->with_errors( $validation->errors );
+			return Redirect::to( 'patients/' . $patient_id . '/threads/new' )->with_errors( $validation->errors );
 		}
 	}
 }

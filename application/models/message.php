@@ -2,9 +2,9 @@
 
 class Message extends Eloquent
 {
-	public function patient()
+	public function thread()
 	{
-		return $this->belongs_to( 'patient' );
+		return $this->belongs_to( 'thread' );
 	}
 
 	public function attachments()
