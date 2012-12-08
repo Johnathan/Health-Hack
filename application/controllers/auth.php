@@ -1,6 +1,6 @@
 <?php
 
-class Auth_Controller extends Base_Controller 
+class Auth_Controller extends Base_Controller
 {
     public $restful = true;
 
@@ -32,6 +32,41 @@ class Auth_Controller extends Base_Controller
         // Go to the admin section
         return Redirect::to('patients');
     }
+
+	public function get_register()
+	{
+        return View::make('auth.register');
+	}
+
+	public function post_register()
+	{
+		$rules = array(
+			'name' => 'required',
+			'email' => 'required|email|unique:users',
+			'password' => 'required'
+		);
+
+		$validation = Validator::make( Input::all(), $rules );
+
+		if( $validation->passes() )
+		{
+			$user = User::create(array(
+				'type' => 'gp',
+				'name' => Input::get( 'name' ),
+				'email' => Input::get( 'email' ),
+				'password' => Hash::make( Input::get( 'password' ) )
+			));
+
+			$user->save();
+
+			Auth::login( $user->id );
+			return Redirect::to( '/' );
+		}
+		else
+		{
+			return Redirect::to( 'register' )->with_errors( $validation->errors )->with_input();
+		}
+	}
 
     public function get_logout() {
         // Log the user out

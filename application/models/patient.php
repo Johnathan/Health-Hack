@@ -9,7 +9,7 @@ class Patient extends Eloquent
 
 	public function threads()
 	{
-		return $this->has_many( 'thread' );
+		return $this->has_many( 'thread' )->order_by( 'updated_at', 'DESC' );
 	}
 
 	public function patient_meta()
