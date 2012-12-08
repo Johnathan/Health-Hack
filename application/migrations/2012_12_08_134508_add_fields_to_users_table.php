@@ -10,7 +10,7 @@ class Add_Fields_To_Users_Table {
 	public function up()
 	{
 		Schema::table('users', function($table) {
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
         });
 	}
