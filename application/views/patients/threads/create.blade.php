@@ -7,8 +7,8 @@
             @include('patients._profile')
         </div><!-- end .span3 -->
 
-        <div class="span9">
-            <h2>Post a new issue</h2>
+        <div class="span9 new-issue">
+            <h2 class="add-issue">Post a new issue</h2>
 
             <form action="{{ URL::current() }}" method="POST" class="form-horizontal">
             	
@@ -43,9 +43,7 @@
                     </div>
                 </fieldset>
 
-                <div class="form-actions">
-            	   {{Form::submit( 'Post Issue', array('class' => 'btn btn-primary') )}}
-                </div><!-- end .form-actions -->
+            	   {{Form::submit( 'Begin Conversation', array('class' => 'btn btn-large btn-success') )}}
             </form>
         </div><!-- end .span9 -->
     </div><!-- end .row -->

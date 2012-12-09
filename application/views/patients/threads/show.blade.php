@@ -6,27 +6,35 @@
         @include('patients._profile')
         </div><!-- end span3 -->
 
-        <div class="span9">
+        <div class="span9 content-panel">
             <section class="thread-description">
                 @if ($thread->urgency === "urgent")
                     <span class="label label-important">Urgent</span>
                 @endif
-                <span class="posted">Posted {{ $thread->days_ago }} at {{ date("H:i", strtotime($thread->created_at)) }}</span>
-                <h1 class="thread-title">
-                    {{$thread->title}}
-                    <small>Last updated: {{ date("H:i jS M Y", strtotime($thread->updated_at)) }}</small>
-                </h1>
+                
+                <h3 class="thread-title">
+                    {{$thread->title}}<br>
+                    <small>Last updated: {{ date("H:i jS M Y", strtotime($thread->updated_at)) }} | <span class="posted">Posted {{ $thread->days_ago }} at {{ date("H:i", strtotime($thread->created_at)) }}</span></small>
+                </h3>
 
                 <p>{{ nl2br($thread->message) }}</p>
+                
+                <hr/>
+                
+                <p class="thread-meta">There are currently 2 people involved in this discussion</p>
+                
+                <hr />
+                
+                 @include('patients.threads.messages._form')
             </section>
 
             <section class="messages">
-                @include('patients.threads.messages._form')
+               
 
                 @if( $thread->messages()->get() )
-                <ol class="thread-messages">
+                <ol class="thread-messages row">
                     @foreach( $thread->messages()->get() as $message )
-                    <li>
+                    <li class="span9">
                         @include('patients.threads.messages._list-item')
                     </li>
                     @endforeach

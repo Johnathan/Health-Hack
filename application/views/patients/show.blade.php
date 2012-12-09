@@ -1,7 +1,7 @@
 @layout('layouts.master')
 
 @section('content')
-    <a href="{{ URL::to('/patients/edit/'.$patient->id) }}">Edit</a>
+    
     <div class="row">
         <div class="span3">
         @include('patients._profile')
@@ -19,7 +19,7 @@
             @else
                 <p>{{ $patient->name }} has no threads yet.</p>
             @endif
-    		<a href="/patients/{{$patient->id}}/threads/new">Add Thread</a>
+    		<a href="/patients/{{$patient->id}}/threads/new" class="btn btn-large btn-success">Add Thread</a>
         </section>
     </div><!-- end .row -->
 @endsection

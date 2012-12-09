@@ -27,5 +27,7 @@
         	<h4>Allergies:</h4>
             {{$patient->allergies}}
         </div>
+        <a href="{{ URL::to('/patients/edit/'.$patient->id) }}" class="btn">Update Information</a>
     </section>
+    
 </section>

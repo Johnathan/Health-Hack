@@ -32,7 +32,7 @@
     </div>
 </header>
 
-<section role="main" class="main-body">
+<section role="front-end" class="main-body">
     @yield('content')
 </section><!-- end .main-body -->
 

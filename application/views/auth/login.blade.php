@@ -12,6 +12,9 @@ Please Login
         </div>
     @endif
 
+
+<div style="width:100%;height: 60px;float: left;clear:both;"></div>
+
 <div class="log-in-form">
     <div class="ui-box auth-box">
        
@@ -35,10 +38,12 @@ Please Login
             <label class="checkbox">
                 <input type="checkbox" name="remember_me"> Keep me logged in
             </label>
+            
+            <div style="width: 100%; height: 20px; float: left;"></div>
 
-            <div class="form-actions">
-                <input type="submit" value="Login" class="btn btn-primary">
-            </div>
+            
+                <input type="submit" value="Login" class="btn btn-large btn-success">
+            
         </form>
         
     </div>
