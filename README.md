@@ -16,3 +16,7 @@ Collaboration with specialists at an early stage can often reduce the need for a
 A health professional will make a referral when treatment that is beyond their confidence.  Narrow conduit of referral. Typically taking weeks to months.
 
 Access to timely information and advice could make specialist care more efficient of avoided altogether.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Johnathan/health-hack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
